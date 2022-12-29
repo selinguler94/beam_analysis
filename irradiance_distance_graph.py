@@ -39,6 +39,13 @@ plt.plot(y,x)
 peak_irradiance = np.max(irradiance)
 
 
+#the peak irradiance of the beam
+peak_irradiance = np.max(irradiance)
+peak_irradiance_index = np.argmax(irradiance)
+peak_irradiance_distance = distance[peak_irradiance_index]
+plt.plot([peak_irradiance_distance, peak_irradiance_distance], [0, peak_irradiance], '--')
+
+
 #beam_diameter (no unit since not a real value calculated from a valid equation or set of data)
 beam_diameter = 2 * np.sqrt(peak_irradiance / (1/(np.e)**2 * peak_irradiance)) * 1/(np.e)**2
 
