@@ -15,8 +15,8 @@ irradiance, distance = [], []
 
 
 for i in range(image.width):
-    irradiance.append((sum(pixels[i, y_axis]))/100)
-    distance.append((i + 1)/100)
+    irradiance.append((sum(pixels[i, y_axis])))
+    distance.append((i + 1))
 
     
 #the 1/e^2 point
