@@ -9,6 +9,7 @@ pixels = image.load()
 #the irradiance and distance data
 y_axis = int(image.height/2)
 irradiance, distance = [], []
+
 for i in range(image.width):
     irradiance.append((sum(pixels[i, y_axis]))/100)
     distance.append((i + 1)/100)
@@ -26,13 +27,16 @@ y = one_over_e_squared * np.ones(x.shape)
 plt.plot(distance, irradiance)
 plt.plot(y,x)
 
+#peak irradiance
 peak_irradiance = np.max(irradiance)
 
 #beam_diameter (no unit since not a real value calculated from a valid equation or set of data)
 beam_diameter = 2 * np.sqrt(peak_irradiance / (1/(np.e)**2 * peak_irradiance)) * 1/(np.e)**2
+
 plt.text(0.03, 0.91, f'Peak irradiance: {peak_irradiance:.2f}' ' W/m^2', transform=plt.gca().transAxes, fontsize = 8)
 plt.text(0.03, 0.95, f'Beam diameter: {beam_diameter:.2f}', transform=plt.gca().transAxes, fontsize = 8)
 plt.text(0.16, 0.56, f'1/e^2 point', transform=plt.gca().transAxes, fontsize = 8)
+
 plt.ylabel('irradiance (W/m^2)')
 plt.xlabel('distance (m)')
 plt.title('Irradiance Distance Graph for He-Ne Laser')
