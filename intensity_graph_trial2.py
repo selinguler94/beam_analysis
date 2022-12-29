@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 # Open the image and apply a median filter
-image = Image.open(r'''C:\Users\HP\OneDrive\Masaüstü\OPTICS\laser image.jpg''')
+image = Image.open(r'')
 image = image.filter(ImageFilter.MedianFilter(3))
 pixels = image.load()
 
