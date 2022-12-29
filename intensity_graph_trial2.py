@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image, ImageFilter
 
+
+
 # Open the image and apply a median filter
 image = Image.open(r'')
 image = image.filter(ImageFilter.MedianFilter(3))
@@ -14,11 +16,12 @@ y_axis = int(image.height/2)
 irradiance, distance = [], []
 
 
+
 for i in range(image.width):  
     irradiance.append((sum(pixels[i, y_axis]))/100)
         distance.append((i + 1)/100)
 
-      
+        
 
 # Find the 1/e^2 point
 max_irradiance = max(irradiance)
@@ -36,9 +39,9 @@ plt.plot(y,x)
 
 
 
-
 peak_irradiance = np.max(irradiance)
 print('Peak irradiance:', peak_irradiance, 'W/m^2')
+
 
 
 #beam_diameter (no unit since not a real value calculated from a valid equation or set of data)
