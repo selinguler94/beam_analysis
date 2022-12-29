@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 
+#upload the image
 image = Image.open(r'')
 image = image.filter(ImageFilter.MedianFilter(3))
 pixels = image.load()
