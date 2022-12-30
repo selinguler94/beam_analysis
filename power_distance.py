@@ -29,13 +29,13 @@ a, b = params
 
 # generated data
 x_curve = np.linspace(0, 2, 50)
-
-
 y_curve = power_func(x_curve, a, b)
 
 
-# Plot the data and the curve
-plt.plot(distance, power, 'o', x_curve, y_curve, '-')
+plt.plot(distance, power, '-', color='g')
+plt.plot(x_curve, y_curve, '--', color='b')
+
+
 plt.xlabel('Distance (m)')
 plt.ylabel('Power (mW)')
 plt.show()
