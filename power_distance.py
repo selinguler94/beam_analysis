@@ -12,6 +12,8 @@ with open("power.txt", "r") as power_values:
     power_lines = power_values.readlines()
 with open("distance.txt", "r") as distance_values:
     distance_lines = distance_values.readlines()
+    
+    
 for i in range(len(power_lines)):
     power.append(float(power_lines[i]))
     distance.append(float(distance_lines[i]))
